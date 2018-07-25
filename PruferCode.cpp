@@ -2,12 +2,12 @@
 using namespace std;
 #define max 100000
 
-void Prufercode(int n,int a[2][max]){
+void Prufercode(int n,int prufer[2][max]){
     int i;
     int sumcon[max+1]={0}; //mang luu so con cua cac dinh theo thu tu dinh tang dan
     for(i=0;i<n;i++){
-        sumcon[a[0][i]]++; //tinh so con cua cac dinh theo thu tu dinh tang dan
-        sumcon[a[1][i]]++;
+        sumcon[prufer[0][i]]++; //tinh so con cua cac dinh theo thu tu dinh tang dan
+        sumcon[prufer[1][i]]++;
     }
 
     int conMin;
@@ -23,18 +23,18 @@ void Prufercode(int n,int a[2][max]){
         
         for(i=0;i<n;i++){
             if(khoa[i]==0){
-                if(a[0][i]==conMin){
-                    sumcon[a[0][i]]--;
-                    sumcon[a[1][i]]--;	
-                    cout<<a[1][i];
+                if(prufer[0][i]==conMin){
+                    sumcon[prufer[0][i]]--;
+                    sumcon[prufer[1][i]]--;	
+                    cout<<prufer[1][i];
                     cout<<" ";
                     khoa[i]=1;
                     break;
             }
-                if(a[1][i]==conMin){
-                    sumcon[a[0][i]]--;	
-                    sumcon[a[1][i]]--;
-                    cout<<a[0][i];
+                if(prufer[1][i]==conMin){
+                    sumcon[prufer[0][i]]--;	
+                    sumcon[prufer[1][i]]--;
+                    cout<<prufer[0][i];
                     cout<<" ";
                     khoa[i]=1;
                     break;
